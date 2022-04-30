@@ -18,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 
  
 // /single listing
-Route::get('/listings{listing}', [ListingController::class, 'show']);
+// Route::get('/listings/{listing}', [ListingController::class, 'show']);

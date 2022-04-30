@@ -8,11 +8,13 @@ use App\Models\Listing;
 
 class ListingController extends Controller{
    public function index(){
-       return view('listings', ['listings' => Listing::all()]);
+        $listings =  Listing ::all();
+
+       return view('listings', compact('listings'));
    }
 
-   public function show(Listing $listing){
-       return  view('listing', ['listing' => $listing]);
+//    public function show(Listing $listing){
+//        return  view('listing', ['listing' => $listing]);
 
-   }
+//    }
 }
