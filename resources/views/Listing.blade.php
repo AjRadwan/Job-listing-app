@@ -3,6 +3,9 @@
 @include('partials._search')
 
 <main>
+    <a href="/" class="inline-block text-black ml-4 mb-4"
+    ><i class="fa-solid fa-arrow-left"></i> Back
+</a>
 <div class="mx-4">
 <div class="bg-gray-50 border border-gray-200 p-10 rounded">
 <div
@@ -41,14 +44,14 @@
         <div class="text-lg space-y-6">
            <p>{{ $listing->description }}</p>
             <a
-                href="mailto:test@test.com"
+                href="mailto:{{ $listing->email }}"
                 class="block bg-laravel text-white mt-6 py-2 rounded-xl hover:opacity-80"
                 ><i class="fa-solid fa-envelope"></i>
                 Contact Employer</a
             >
 
             <a
-                href="https://test.com"
+                href="{{ $listing->website }}"
                 target="_blank"
                 class="block bg-black text-white py-2 rounded-xl hover:opacity-80"
                 ><i class="fa-solid fa-globe"></i> Visit
