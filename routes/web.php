@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
 
 //store listing data
-Route::get('/listings', [ListingController::class, 'store'])->name('listings.store');
+Route::Post('/listings', [ListingController::class, 'store'])->name('listings.store');
 
 
 
