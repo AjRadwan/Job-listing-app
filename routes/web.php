@@ -15,15 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //all listing
- Route::get('/', [ListingController::class, 'index']);
+ Route::get('/', [ListingController::class, 'index'])->name('listings.index');
 
  
 // show create form
-Route::get('/listings/create', [ListingController::class, 'create']);
+Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
+
+//store listing data
+Route::get('/listings', [ListingController::class, 'store'])->name('listings.store');
+
 
 
 // single listing
-Route::get('/listings/{listing}', [ListingController::class, 'show']);
+Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('listings.show');
  
 
 
