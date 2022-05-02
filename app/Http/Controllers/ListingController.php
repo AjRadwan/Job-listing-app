@@ -15,5 +15,10 @@ class ListingController extends Controller{
    public function show(Listing $listing){
        return  view('listings.show', compact('listing'));
    }
+
+
+   public function create(){
+     return view('listings.create');
+   }
  
 }
