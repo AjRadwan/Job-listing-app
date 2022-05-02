@@ -8,7 +8,7 @@ use App\Models\Listing;
 
 class ListingController extends Controller{
    public function index(){
-        $listings =  Listing ::latest()->filter(request(['tag']))->get();
+        $listings =  Listing ::latest()->filter(request(['tag', 'search']))->get();
        return view('listings.index', compact('listings'));
    }
 
