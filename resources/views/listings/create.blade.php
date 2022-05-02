@@ -7,7 +7,7 @@
     <p class="mb-4">Post a gig to find a developer</p>
 </header>
 
-<form action="{{ route('listings.store') }}" method="post">
+<form action="{{ route('listings.store') }}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="mb-6">
         <label
@@ -90,7 +90,7 @@
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
             @enderror
     </div>
-{{-- 
+
     <div class="mb-6">
         <label for="logo" class="inline-block text-lg mb-2">
             Company Logo
@@ -99,7 +99,10 @@
             type="file"
             class="border border-gray-200 rounded p-2 w-full"
             name="logo"/>
-    </div> --}}
+            @error('logo')
+            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            @enderror
+    </div>
 
     <div class="mb-6">
         <label
