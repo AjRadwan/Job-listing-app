@@ -16,7 +16,7 @@
         <input
             type="text"
             class="border border-gray-200 rounded p-2 w-full"
-            name="company" />
+            name="company"  value="{{ old('company') }}"/>
         @error('company')
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
         @enderror
@@ -29,7 +29,7 @@
             type="text"
             class="border border-gray-200 rounded p-2 w-full"
             name="title"
-            placeholder="Example: Senior Laravel Developer"/>
+            placeholder="Example: Senior Laravel Developer" value="{{ old('title') }}"/>
             @error('title')
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
            @enderror 
@@ -111,7 +111,7 @@
             class="border border-gray-200 rounded p-2 w-full"
             name="description"
             rows="10"
-            placeholder="Include tasks, requirements, salary, etc"></textarea>
+            placeholder="Include tasks, requirements, salary, etc" value="{{ old('description') }}"></textarea>
             @error('description')
             <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
         @enderror

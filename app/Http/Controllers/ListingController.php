@@ -9,7 +9,7 @@ use Illuminate\Validation\Rule;
 
 class ListingController extends Controller{
    public function index(){
-        $listings =  Listing ::latest()->filter(request(['tag', 'search']))->get();
+        $listings =  Listing ::latest()->filter(request(['tag', 'search']))->paginate(4);
        return view('listings.index', compact('listings'));
    }
 
@@ -36,7 +36,7 @@ class ListingController extends Controller{
 
      Listing::create($formFileds);
 
-     return redirect('/');
+     return redirect('/')->with('message', 'Listing created successfully');  
    }
  
 }
