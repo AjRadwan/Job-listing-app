@@ -41,7 +41,19 @@
 </div>
 <div class="block bg-laravel text-white mt-6 py-2 rounded-xl text-center">
     <a href="{{ route('listings.edit', $listing) }}">Edit</a>
+    
+    
 </div>
+<div  class="block bg-black text-white py-2 rounded-xl text-center mt-3">
+    <form action="{{ route('listings.delete', $listing) }}" method="post">
+        @csrf 
+        @method("DELETE")
+        <button>
+         Delete
+        </button>
+    </form>
+</div>
+ 
 </div>
   
 </div>
