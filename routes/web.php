@@ -40,9 +40,16 @@ Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('lis
  
 
 
+
+
+
 //show register formFileds
 
 Route::get('/register', [UserController::class, 'create'])->name('register');
+
+
+//create a new user
+Route::post('/users', [UserController::class, 'store']);
 
 
 
