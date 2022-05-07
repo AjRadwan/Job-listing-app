@@ -39,7 +39,11 @@
         </div>
     </div>
 </div>
+<div class="block bg-laravel text-white mt-6 py-2 rounded-xl text-center">
+    <a href="{{ route('listings.edit', $listing) }}">Edit</a>
 </div>
+</div>
+  
 </div>
 </main>
 

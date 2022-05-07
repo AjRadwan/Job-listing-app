@@ -25,6 +25,11 @@ Route::get('/listings/create', [ListingController::class, 'create'])->name('list
 Route::Post('/listings', [ListingController::class, 'store'])->name('listings.store');
 
 
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->name('listings.edit');
+
+
+// update
+Route::put('/listings/{listing}', [ListingController::class, 'update'])->name('listings.update'); 
 
 // single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('listings.show');
