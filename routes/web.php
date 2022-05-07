@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ListingController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 
 /*
@@ -37,6 +38,11 @@ Route::delete('/listings/{listing}', [ListingController::class, 'delete'])->name
 // single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('listings.show');
  
+
+
+//show register formFileds
+
+Route::get('/register', [UserController::class, 'create'])->name('register');
 
 
 
