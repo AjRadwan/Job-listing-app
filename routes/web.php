@@ -40,7 +40,7 @@ Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('lis
  
 
 
-
+ 
 
 
 //show register formFileds
@@ -58,6 +58,9 @@ Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 // show login form
 Route::get('/login', [UserController::class, 'login'])->name('login');
+
+// Log in user 
+Route::post('/users/auth', [UserController::class, 'auth'])->name('users.auth');
 
 
 

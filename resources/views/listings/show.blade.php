@@ -47,7 +47,7 @@
 <div  class="block bg-black text-white py-2 rounded-xl text-center mt-3">
     <form action="{{ route('listings.delete', $listing) }}" method="post">
         @csrf 
-        @method("DELETE")
+        @method('DELETE')
         <button>
          Delete
         </button>
