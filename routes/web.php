@@ -20,20 +20,20 @@ use App\Http\Controllers\ListingController;
 
  
 // show create form
-Route::get('/listings/create', [ListingController::class, 'create'])->name('listings.create');
+Route::get('/listings/create', [ListingController::class, 'create'])->middleware('auth')->name('listings.create');
 
 //store listing data
-Route::Post('/listings', [ListingController::class, 'store'])->name('listings.store');
+Route::Post('/listings', [ListingController::class, 'store'])->middleware('auth')->name('listings.store');
 
 
-Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->name('listings.edit');
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit'])->middleware('auth')->name('listings.edit');
 
 
 // update
-Route::put('/listings/{listing}', [ListingController::class, 'update'])->name('listings.update'); 
+Route::put('/listings/{listing}', [ListingController::class, 'update'])->middleware('auth')->name('listings.update'); 
 
 //delete
-Route::delete('/listings/{listing}', [ListingController::class, 'delete'])->name('listings.delete'); 
+Route::delete('/listings/{listing}', [ListingController::class, 'delete'])->middleware('auth')->name('listings.delete'); 
 
 // single listing
 Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('listings.show');
@@ -45,7 +45,7 @@ Route::get('/listings/{listing}', [ListingController::class, 'show'])->name('lis
 
 //show register formFileds
 
-Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::get('/register', [UserController::class, 'create'])->middleware('guest')->name('register');
 
 
 //create a new user
@@ -53,11 +53,11 @@ Route::post('/users', [UserController::class, 'store']);
 
 //log out users
 
-Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth')->name('logout');
 
 
 // show login form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->middleware('guest')->name('login');
 
 // Log in user 
 Route::post('/users/auth', [UserController::class, 'auth'])->name('users.auth');
