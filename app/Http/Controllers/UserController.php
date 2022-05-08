@@ -13,7 +13,6 @@ class UserController extends Controller
     }
 
 
-
     public function store(Request $request) {
         $formFields = $request->validate([
             'name' => ['required', 'min:3'],
@@ -42,5 +41,10 @@ class UserController extends Controller
 
         return redirect('/')->with('message', 'You have been logged out!');
 
+    }
+
+
+    public function login(){
+        return view('users.login');
     }
 }
